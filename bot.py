@@ -4,6 +4,17 @@ client = discord.Client()
 
 
 @client.event
-async def on_read():
-    print("Lets Get That Bread")
-    await client.change_presence(game=discord.Game(name="Ivey Street Bets"))
+async def on_ready():
+    print('We have logged in as {0.user}'.format(client))
+
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    if message.content.startswith('$hello'):
+        await message.channel.send('Hello!')
+
+
+client.run("NjE5OTYxNjUyNTg2MjE3NDky.XXP2YQ.jsVN8cOyN8aOarAcreEY4AVC1vA")
