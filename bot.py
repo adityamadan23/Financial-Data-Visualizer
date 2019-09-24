@@ -1,6 +1,8 @@
 import discord
+from alpha_vantage.timeseries import TimeSeries
 
 client = discord.Client()
+ts = TimeSeries(key='XXXXX', output_format='pandas')
 
 
 @client.event
@@ -19,4 +21,4 @@ async def on_message(message):
         await message.channel.send('Hello!')
 
 
-client.run("NjE5OTYxNjUyNTg2MjE3NDky.XXQGTg.jdJsJXE7RrHbM5U1PpBWfbaDago")
+client.run("NjE5OTYxNjUyNTg2MjE3NDky.XXUxMA.85a0cV6h91Kye1wpfOSARdgIfIk")
